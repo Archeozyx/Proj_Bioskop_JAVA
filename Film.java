@@ -1,13 +1,20 @@
-package proj_bioskop;
-
 public class Film {
-    private String id_film;
+    private int id_film; // Changed from String to int
     private String judul;
     private String sutradara;
     private float rating;
     private double harga;
 
-    public Film(String id_film, String judul, String sutradara, float rating, double harga) {
+    // Constructor without id_film (for new films)
+    public Film(String judul, String sutradara, float rating, double harga) {
+        this.judul = judul;
+        this.sutradara = sutradara;
+        this.rating = rating;
+        this.harga = harga;
+    }
+
+    // Constructor with id_film (for existing films)
+    public Film(int id_film, String judul, String sutradara, float rating, double harga) {
         this.id_film = id_film;
         this.judul = judul;
         this.sutradara = sutradara;
@@ -15,11 +22,11 @@ public class Film {
         this.harga = harga;
     }
 
-    public String getId_film() {
+    public int getId_film() {
         return id_film;
     }
 
-    public void setId_film(String id_film) {
+    public void setId_film(int id_film) {
         this.id_film = id_film;
     }
 
@@ -54,16 +61,15 @@ public class Film {
     public void setHarga(double harga) {
         this.harga = harga;
     }
-    
+
     @Override
     public String toString() {
         return "Film{" +
-                "idFilm='" + id_film + '\'' +
+                "id_film=" + id_film +
                 ", judul='" + judul + '\'' +
                 ", sutradara='" + sutradara + '\'' +
                 ", rating=" + rating +
                 ", harga=" + harga +
                 '}';
     }
-    
 }

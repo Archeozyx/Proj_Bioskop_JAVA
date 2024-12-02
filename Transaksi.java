@@ -1,19 +1,18 @@
-package proj_bioskop;
 import java.time.LocalDateTime;
 
 public class Transaksi {
     private int id_transaksi;
-    private String id_film;
-    private int id_pelanggan;
+    private int id_film; // Changed to int
+    private int id_admin;
     private String no_kursi;
     private int jumlah_tiket;
     private double total_harga;
-    LocalDateTime tanggal_transaksi;
+    private LocalDateTime tanggal_transaksi;
 
-    public Transaksi(int id_transaksi, String id_film, int id_pelanggan, String no_kursi, int jumlah_tiket, double total_harga, LocalDateTime tanggal_transaksi) {
+    public Transaksi(int id_transaksi, int id_film, int id_admin, String no_kursi, int jumlah_tiket, double total_harga, LocalDateTime tanggal_transaksi) {
         this.id_transaksi = id_transaksi;
         this.id_film = id_film;
-        this.id_pelanggan = id_pelanggan;
+        this.id_admin = id_admin;
         this.no_kursi = no_kursi;
         this.jumlah_tiket = jumlah_tiket;
         this.total_harga = total_harga;
@@ -28,20 +27,20 @@ public class Transaksi {
         this.id_transaksi = id_transaksi;
     }
 
-    public String getId_film() {
+    public int getId_film() {
         return id_film;
     }
 
-    public void setId_film(String id_film) {
+    public void setId_film(int id_film) {
         this.id_film = id_film;
     }
 
-    public int getId_pelanggan() {
-        return id_pelanggan;
+    public int getId_admin() {
+        return id_admin;
     }
 
-    public void setId_pelanggan(int id_pelanggan) {
-        this.id_pelanggan = id_pelanggan;
+    public void setId_admin(int id_admin) {
+        this.id_admin = id_admin;
     }
 
     public String getNo_kursi() {
@@ -74,19 +73,18 @@ public class Transaksi {
 
     public void setTanggal_transaksi(LocalDateTime tanggal_transaksi) {
         this.tanggal_transaksi = tanggal_transaksi;
-    } 
-    
-     @Override
+    }
+
+    @Override
     public String toString() {
         return "Transaksi{" +
-                "idTransaksi=" + id_transaksi +
-                ", idFilm='" + id_film + '\'' +
-                ", idPelanggan=" + id_pelanggan +
-                ", noKursi='" + no_kursi + '\'' +
-                ", jumlahTiket=" + jumlah_tiket +
-                ", totalHarga=" + total_harga +
-                ", tanggalTransaksi=" + tanggal_transaksi +
+                "id_transaksi=" + id_transaksi +
+                ", id_film=" + id_film +
+                ", id_admin=" + id_admin +
+                ", no_kursi='" + no_kursi + '\'' +
+                ", jumlah_tiket=" + jumlah_tiket +
+                ", total_harga=" + total_harga +
+                ", tanggal_transaksi=" + tanggal_transaksi +
                 '}';
     }
-    
 }
