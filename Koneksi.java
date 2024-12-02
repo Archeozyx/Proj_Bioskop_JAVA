@@ -1,5 +1,3 @@
-package proj_bioskop;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,11 +13,12 @@ public class Koneksi {
     public static Connection getConnection() {
         return conn;
     }
+
     private Koneksi() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/dbbioskop", "root", "");//"database" "user" "password"
+                    "jdbc:mysql://localhost:3306/dbbioskop", "root", ""); // Adjust the database, user, and password accordingly
         } catch (SQLException | ClassNotFoundException ex) {
             System.err.println(ex.getMessage());
         }
